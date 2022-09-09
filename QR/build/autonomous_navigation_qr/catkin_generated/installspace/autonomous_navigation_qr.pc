@@ -1,0 +1,8 @@
+prefix=/home/leonardonavacastellanos/Documents/QR_ArUco/QR/install
+
+Name: autonomous_navigation_qr
+Description: Description of autonomous_navigation_qr
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

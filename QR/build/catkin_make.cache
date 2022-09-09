@@ -1,0 +1,2 @@
+autonomous_navigation_qr
+-DCATKIN_DEVEL_PREFIX=/home/leonardonavacastellanos/Documents/QR_ArUco/QR/devel -DCMAKE_INSTALL_PREFIX=/home/leonardonavacastellanos/Documents/QR_ArUco/QR/install -G Unix Makefiles
