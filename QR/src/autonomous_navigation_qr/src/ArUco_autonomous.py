@@ -27,7 +27,6 @@ class MoveArUco():
     
         
         self.state = "pointingTowardsGoal"
-
         #Creamos un función de que hacer cuando haya un shutdown
         rospy.on_shutdown(self.end_callback)
 
@@ -36,7 +35,7 @@ class MoveArUco():
         self.current_pose = pose
 
     def move(self,v_lin,v_ang):
-        """Funcion que publica la velocidad lineal y angular en el puzzlebot"""
+        """Funcion que publica la velocidad lineal y angular en el Rover"""
         #Declaramos le velocidad deseada en el mensaje tipo Twist
         self.msg.linear.x = v_lin        
         self.msg.angular.z = v_ang
@@ -54,19 +53,19 @@ class MoveArUco():
                 [self.current_pose.x-0.1,self.current_pose.y-0.1]]
 
     def end_callback(self):
-        """Funcion que para el puzzlebot cuando el nodo deja de ser corrido"""
+        """Funcion que para el Rover cuando el nodo deja de ser corrido"""
         #Declaramos las velocidades de cero
         self.msg.linear.x = 0.0
         self.msg.angular.z = 0.0
         #Publicamos las velocidades
         self.pub.publish(self.msg)
+
+
 #Si el archivo es corrido directametne y no llamado desde otro archivo corremos
-
-
 if __name__ == "__main__":
     #iniciamos la clase
     mov = MoveArUco()
-    #mientras este corriendo el nodo movemos el carro el circulo
+    
     Kpw = 2.0
     Kpv = 0.5
     while not rospy.is_shutdown():
