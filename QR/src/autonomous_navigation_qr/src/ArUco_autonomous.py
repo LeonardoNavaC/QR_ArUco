@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
+
 import rospy
 import numpy as np
 import random as rdm
@@ -97,7 +98,7 @@ if __name__ == "__main__":
                 mov.move(0.0,0.0)
                 print("Arrived to", mov.target, ", approximately at: ",mov.current_pose.x,mov.current_pose.y)
                 mov.state = "goalReached"
-                    
+                    goalReache
             if mov.state == "goalReached":
                 mov.end_callback()
                 reference_points = mov.create_reference_points()
